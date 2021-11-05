@@ -43,6 +43,8 @@ We chose the Olympics as a topic because our group has a shared interest in spor
 ## Finding Data
 **Data sources and descriptions of the data collected or generated**
 
+[GDP Annual Growth for Each Country (1960 - 2020)](src/data/GDP_data.csv)
+
 **Number of Observations and Rows in our Data**
 
 **Questions (from above) that can be answered using our data in this dataset.**
