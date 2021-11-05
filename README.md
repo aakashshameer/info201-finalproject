@@ -24,7 +24,21 @@ We chose the Olympics as a topic because our group has a shared interest in spor
 
 **What data-driven questions do we hope to answer about this domain and how?**
 
-(3 questions)
+1. What height and weight classes for male and female athletes show the most success in different events?
+
+  - We can look at max medal counts for different events and look at the categories that male and female athletes fall into.
+
+
+2. How do countries’ GDP relate to their medal counts?
+
+ - We can compare whether the countries GDP has an effect on their countries medal count.
+ - We can also see whether an increase/decrease of the countries' GDP results has a direct relation with their medal counts for the Olympics.
+
+
+3. How do the results of the 2021 Olympics for different countries compare to that of past Olympic games?
+
+ - We can look at countries' number of COVID-19 cases and look at whether that affected the medal count.
+ - We can also look at performance of the athletes from different countries based on the facilities the event requires.
 
 ## Finding Data
 **Data sources and descriptions of the data collected or generated**
