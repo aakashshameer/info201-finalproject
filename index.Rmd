@@ -1,0 +1,41 @@
+---
+title: "INFO 201 Final Project"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Olympics Project
+
+For this data set, we chose to surround the our data around the Olympic Games. We have chosen 4 data sets which has correlation with the Olympics Games such as the Olympics 2021 data set, the 120 years of Olympic history, the COVID-19 Global Dataset and the GDP Annual Growth. These data sets are included for us to answer several questions regarding the Olympics games, which are what range of height and weight classes for male and female athletes show the most success in different events, how do countries’ GDP relate to their medal counts and how do the results of the 2021 Olympics for different countries compare to that of past Olympic games?
+
+The **Olympics 2021 Dataset** provides us which a range of data collected from the most recent Olympics games. This data sets ranges from athletes name, gender and country, event and medal count for the recent Tokyo Olympics 2021 for us to find a correlation on whether the impact of a 5 years gap from the previous Olympics Games instead of a 4-year gap present a challenge for various athletes as well as the COVID-19 Cases that the country was hit by. For that correlation, we also include the **COVID-19 Global Dataset** for us to have the COVID-19 cases data.
+
+The **GDP Annual Growth Dataset** provides us a range of data from the year 1960 - 2020 for 264 countries. This is for us to use to find a correlation with the countries' GDP with their medal count. For that relationship, we will also include the **120 years of Olympics history Dataset** for us to have past Olympics Data. 
+
+The reason we chose this data is because we all really enjoyed the past Tokyo Olympics Games and are excited to find correlations of the countries' successes in Olympics Games with other aspect of the world. With all that said, let's look at the data we have gathered.
+
+
+**SUMMARY INFORMATION**
+```{r cars}
+summary(cars)
+```
+
+**AGGREGATED TABLE**
+
+
+**FIRST CHART**
+
+
+**SECOND CHART**
+
+
+**THIRD CHART**
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
