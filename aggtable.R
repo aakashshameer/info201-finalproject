@@ -13,7 +13,7 @@ aggregate_athletes_data <- athlete_events_data %>%
 gdp_data <- read.csv("https://raw.githubusercontent.com/aakashshameer/info201-finalproject/main/src/data/GDP_data.csv")
 
 aggregate_gdp_data <- gdp_data %>%
-  select(Ã¯..Country.Name, Country.Code, X2016)
+  select(ï..Country.Name, Country.Code, X2016)
 
 names(aggregate_gdp_data)[1] <- "Country Name"
 
@@ -24,11 +24,6 @@ aggregate_gdp_data <- aggregate_gdp_data %>%
   rename("2016 GDP" = X2016)
 
 #COVID-19 Data 
-
-covid_daily_data <- read.csv("https://raw.githubusercontent.com/aakashshameer/info201-finalproject/main/src/data/COVID-19_data/worldometer_coronavirus_daily_data.csv")
-
-aggregate_daily_data <- covid_daily_data %>%
-  select(date, country, active_cases)
 
 covid_summary_data <- read.csv("https://raw.githubusercontent.com/aakashshameer/info201-finalproject/main/src/data/COVID-19_data/worldometer_coronavirus_summary_data.csv")
 
