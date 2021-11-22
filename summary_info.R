@@ -1,12 +1,14 @@
 library(dplyr)
 library(readr)
 library(stringr)
+library(tidyverse)
 athlete_events <- read.csv("src/data/olympic_history/athlete_events.csv")
-tokyo_olymic_medal <- read.csv(
-  "https://raw.githubusercontent.com/aakashshameer/info201-finalproject/main/src/data/olympic_data/Tokyo%20Medals%202021.csv")
+tokyo_olymic_medal <- read.csv("src/data/olympic_data/Tokyo Medals 2021.csv")
 
-olympi_medal <- read.csv(
-  "https://raw.githubusercontent.com/aakashshameer/info201-finalproject/main/src/data/Summer_olympic_Medals.csv")
+olympi_medal <- read.csv("src/data/Summer_olympic_Medals.csv")
+
+GDP_data <- read.csv("src/data/GDP_data.csv") %>%
+            rename("2016" = X2016, "Country Name" = Country.Name) 
 
 
 # Average weight of men gold medalists for Swimming in 2016
