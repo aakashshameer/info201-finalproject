@@ -2,8 +2,6 @@ library("dplyr")
 library("readr")
 library("tidyverse")
 
-source("summary_info.R")
-
 #Olympic History: Athlete Events Data
 
 athlete_events_data <- read.csv("src/data/olympic_history/athlete_events.csv")
@@ -38,22 +36,20 @@ aggregate_summary_data <- aggregate_summary_data %>%
 
 #Medals vs GDP
 
+source("summary_info.R")
 
-brazil_total_medal <- brazil_olympic_selected_country_medal %>%
+
+brazil2016_total_medal <- brazil_olympic_selected_country_medal %>%
   mutate(total = Gold + Silver + Bronze)
 
+aggregate_2016_medal_data <-  brazil2016_total_medal %>%
+  select(Year, Host_country, Host_city, Country_Name, total)  %>%
+  rename("Country Name" = Country_Name) %>%
+  rename("Host Country" = Host_country) %>%
+  rename("Host City" = Host_city) %>%
+  rename("Total" = total)
 
-medals_data <- read.csv("src/data/olympic_data/Medals.csv", fileEncoding="UTF-8-BOM")
-
-names(medals_data)[1] <- "Rank"
-
-medals_data <- medals_data %>%
-  rename("Country Name" = Team.NOC)
-
-medals_data <- medals_data %>%
-  rename("Rank by Total" = Rank.by.Total)
-
-gdp_medals_data <- full_join(aggregate_gdp_data, medals_data) 
+gdp_medals_data <- inner_join(aggregate_gdp_data, aggregate_2016_medal_data) 
 
 #Tokyo Medals vs COVID Cases
 
