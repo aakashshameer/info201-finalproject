@@ -17,7 +17,7 @@ aggregate_gdp_data <- gdp_data2 %>%
   select(Country.Name, Country.Code, X2016) %>%
   rename("Country Name" = Country.Name) %>%
   rename("Country Code" = Country.Code) %>%
-  rename("2016 GDP" = X2016)
+  rename("2016_GDP" = X2016)
 
 #COVID-19 Data 
 
