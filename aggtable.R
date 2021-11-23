@@ -42,9 +42,11 @@ aggregate_2016_medal_data <- brazil2016_total_medal %>%
   rename("Country_Name" = Country_Name) %>%
   rename("Host_Country" = Host_country) %>%
   rename("Host_City" = Host_city) %>%
-  rename("Total_Medals" = total)
+  rename("Total_Medals" = total) 
 
 gdp_medals_data <- inner_join(aggregate_gdp_data, aggregate_2016_medal_data) 
+
+gdp_medals_data$Total_Medals <- as.numeric(gdp_medals_data$Total_Medals)   
 
 #Tokyo Medals vs COVID Cases
 
