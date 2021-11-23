@@ -24,10 +24,11 @@ brazil_oly_gdp_medal_count <- gdp_medals_data %>%
 chart_gdp_medal_count <- ggplot(gdp_medals_data) +
   geom_point(data = gdp_medals_data,
              size = 3,
-             color = "#F285B8",
+             color = "#E35E9C",
              mapping = aes(x =  Total_Medals, y = GDP2016)) +
+  geom_text(aes(label=Country_Name))+
   ggtitle("2016 GDP & Olympic Medal Count") +
-  theme(plot.title = element_text(size = 13, family = "mono", color = "#F285B8"), 
+  theme(plot.title = element_text(size = 13, family = "mono", color = "#E35E9C"), 
         axis.text = element_text(color = "#525252", size = 8), 
         text = element_text(size = 10, family = "mono"))+
   labs(x = "Total Medal", y = "GDP") 
