@@ -5,14 +5,6 @@ library(tidyverse)
 # swimming, gymnastica, weight lift, tennis
 # only gold
 
-
-
-mod_weight_data <- athlete_events %>%
-  select(Sex, Height, Weight, Games, Sport, Medal) %>%
-  filter(Games == "2016 Summer") %>%
-  filter(Sport %in% c("Gymnastics", "Swimming", "Weightlifting", "Tennis")) %>%
-  filter(Medal == "Gold")
-
 source("summary_info.R")
 Sport <- c("Gymnastics", "Gymnastics", "Swimming", "Swimming",
            "Weightlifting", "Weightlifting", "Tennis", "Tennis") 

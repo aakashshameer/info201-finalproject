@@ -6,7 +6,7 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 source("summary_info.R")
-source("aggtable.R")
+source("Chart1.R")
 ```
 
 ## Olympics Project
@@ -22,13 +22,18 @@ The reason we chose this data is because we all really enjoyed the past Tokyo Ol
 
 **SUMMARY INFORMATION**
 
-To answer our first curiosity, we compare and contrast the height and weight of different male and females athletes from the most recent Tokyo 2021 Olympics. The 3 sports we chose are Tennis, Gymnastics, Weight Lifting, and Swimming. We notice that the average height and weight for men in gymnastics are `r format (avg_men_gym_height, big.mark = ", ")` and `r format (avg_men_gym_weight, big.mark = ", ")`. We can contrast that with the average height and weight for men in swimming which are `r format (avg_men_swimming_height, big.mark = ", ")` and `r format (avg_men_swimming_weight, big.mark = ", ")`. We can also witness an obvious difference in women gymnastics and swimming which are `r format (avg_women_gym_height, big.mark = ", ")` for height, `r format (avg_women_gym_weight, big.mark = ", ")` for weight and `r format (avg_women_swimming_height, big.mark = ", ")` for height, `r format (avg_women_swimming_weight, big.mark = ", ")` for weight for the respective sports. These findings are interesting as we see the demands for weight and height that different sports in the Olympics demands for. Gymnastics require you to be more flexible and light on your feet where else Swimming requires you to be strong and tall.
+To answer our first curiosity, we compare and contrast the height and weight of different male and females athletes from the most recent Rio 2016 Olympics. The 3 sports we chose are Tennis, Gymnastics, Weight Lifting, and Swimming. We notice that the average height and weight for men in gymnastics are `r format (avg_men_gym_height, big.mark = ", ")` and `r format (avg_men_gym_weight, big.mark = ", ")`. We can contrast that with the average height and weight for men in swimming which are `r format (avg_men_swimming_height, big.mark = ", ")` and `r format (avg_men_swimming_weight, big.mark = ", ")`. We can also witness an obvious difference in women gymnastics and swimming which are `r format (avg_women_gym_height, big.mark = ", ")` for height, `r format (avg_women_gym_weight, big.mark = ", ")` for weight and `r format (avg_women_swimming_height, big.mark = ", ")` for height, `r format (avg_women_swimming_weight, big.mark = ", ")` for weight for the respective sports. These findings are interesting as we see the demands for weight and height that different sports in the Olympics demands for. Gymnastics require you to be more flexible and light on your feet where else Swimming requires you to be strong and tall.
 
 **AGGREGATED TABLE**
 
 
+
 **FIRST CHART**
 
+```{r first, echo=FALSE}
+Chart_Avg_Height
+Chart_Avg_Weight
+```
 
 **SECOND CHART**
 
@@ -37,5 +42,5 @@ To answer our first curiosity, we compare and contrast the height and weight of 
 
 You can also embed plots, for example:
 
-```{r pressure, echo=FALSE}
+```{r , echo=FALSE}
 ```
