@@ -1,6 +1,7 @@
 library(ggplot2)
 library(dplyr)
 library(tidyverse)
+library(knitr)
 
 # swimming, gymnastica, weight lift, tennis
 # only gold
@@ -13,6 +14,13 @@ Avg_Weight <- c(avg_men_gym_weight, avg_women_gym_weight, avg_men_swimming_weigh
                 avg_men_lift_weight, avg_women_lift_weight, avg_men_Tennis_weight, avg_women_Tennis_weight)
 Avg_Weight_Chart_Data <- data.frame(Sport, Avg_Weight, Sex)
 
+avg_weight_chart_table <- kable(Avg_Weight_Chart_Data,
+                            caption = "Average Weight of Men and Women for Olympics 2016",
+                            format.args = list(
+                              big.mark = ",",
+                              scientific = FALSE
+                            )
+)
 
 Chart_Avg_Weight <- ggplot(Avg_Weight_Chart_Data,
                            aes(Sport, Avg_Weight, col = Sex, fill = Sex)) +
@@ -30,6 +38,13 @@ Avg_Height <- c(avg_men_gym_height, avg_women_gym_height, avg_men_swimming_heigh
                   avg_men_lift_height, avg_women_lift_height, avg_men_Tennis_height, avg_women_Tennis_height)
   Avg_Height_Chart_Data <- data.frame(Sport, Avg_Height, Sex)
   
+  avg_height_chart_table <- kable(Avg_Height_Chart_Data,
+                                  caption = "Average Weight of Men and Women for Olympics 2016",
+                                  format.args = list(
+                                    big.mark = ",",
+                                    scientific = FALSE
+                                  )
+  )
   
   Chart_Avg_Height <- ggplot(Avg_Height_Chart_Data,
                              aes(Sport, Avg_Height, col = Sex, fill = Sex)) +

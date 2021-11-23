@@ -7,6 +7,8 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 source("summary_info.R")
 source("Chart1.R")
+source("second_chart.R")
+source("Chart3.R")
 ```
 
 ## Olympics Project
@@ -24,9 +26,18 @@ The reason we chose this data is because we all really enjoyed the past Tokyo Ol
 
 To answer our first curiosity, we compare and contrast the height and weight of different male and females athletes from the most recent Rio 2016 Olympics. The 3 sports we chose are Tennis, Gymnastics, Weight Lifting, and Swimming. We notice that the average height and weight for men in gymnastics are `r format (avg_men_gym_height, big.mark = ", ")` and `r format (avg_men_gym_weight, big.mark = ", ")`. We can contrast that with the average height and weight for men in swimming which are `r format (avg_men_swimming_height, big.mark = ", ")` and `r format (avg_men_swimming_weight, big.mark = ", ")`. We can also witness an obvious difference in women gymnastics and swimming which are `r format (avg_women_gym_height, big.mark = ", ")` for height, `r format (avg_women_gym_weight, big.mark = ", ")` for weight and `r format (avg_women_swimming_height, big.mark = ", ")` for height, `r format (avg_women_swimming_weight, big.mark = ", ")` for weight for the respective sports. These findings are interesting as we see the demands for weight and height that different sports in the Olympics demands for. Gymnastics require you to be more flexible and light on your feet where else Swimming requires you to be strong and tall.
 
+Next, we also wanted to compare and contrast between the GDP of a country and their medal successes in the Olympic Games. We looked at the GDP of United States, China, Great Britain, India, Japan, etc. For example, the GDP of the Year 2016 for United States is `r format (US_2016_GDP, big.mark = ", ")` and India is `r format (India_2016_GDP, big.mark = ", ")` and we were curious to see if the difference in GDP result in a difference in Medal Count. 
+
+Lastly, we wanted to distinguish between the medal counts of the most recent Olympics Games with the previous one in 2016. The Tokyo Olympics Games was postpone to 2021 from 2020 due to the dire COVID-19 situation. We wanted to see if that had an effect towards the Countries' Medal Count.
+
 **AGGREGATED TABLE**
 
-
+```{r table, echo=FALSE}
+avg_weight_chart_table
+avg_height_chart_table
+gdp_vs_medal_table
+medal_count_table
+```
 
 **FIRST CHART**
 
@@ -35,12 +46,20 @@ Chart_Avg_Height
 Chart_Avg_Weight
 ```
 
+Here we can observe the difference between the Height and Weight of Gold Medalist of Male and Female Athletes of the 2016 Olympics Games. We can see that there is a difference in each sport of Weight and Height Requirements. Swimming requires their athletes to be one of the tallest among the 4 sports and Weightlifting requires its athletes to be among the heaviest. These characteristics fits the style and enviroment of the sport itself.
+
 **SECOND CHART**
 
+```{r second, echo=FALSE}
+chart_gdp_medal_count
+```
+
+Here we can observe the direct comparison between the GDP of countries and their medal counts. If we look at the graph, we can spot a direct correlation between the two. Take United States, their GDP is high will corresponds to their medal count to be among the highest. India, on the other hand, despite having one of the largest population, their GDP is low which corresponds to their Olympic medal count to be low. This is an interesting distinction because countries with higher GDP will have more funding to invest in their national sports team which will boost their medal counts. 
 
 **THIRD CHART**
 
-You can also embed plots, for example:
-
-```{r , echo=FALSE}
+```{r third, echo=FALSE}
+stacked_bar_graph
 ```
+
+From this graph, we can observe the medal counts of several countries from the Tokyo 2021 Olympics and the Rio 2016 Olympics. Despite the games, having a 5-year gap and the countries and athletes needing to deal with COVID-19, their medal count doesn't have much differences. The United States medal count actually increase from 2016 to 2021 despite having a large amount of COVID-19 cases reported in their country. This proves that the effect that COVID-19 has on the medal count is very slight. 

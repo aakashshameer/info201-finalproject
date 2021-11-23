@@ -2,7 +2,7 @@ library(ggplot2)
 library(dplyr)
 library(tidyverse)
 library(maps)
-library(hrbrthemes)
+library(knitr)
 
 
 source("summary_info.R")
@@ -23,5 +23,14 @@ stacked_bar_graph <- ggplot(tokyo_medals_data_new, aes(fill=Year, y=Medals, x=Co
   coord_flip() + 
   scale_fill_manual(values = c("Blue", " Red"))
 plot(stacked_bar_graph)
+
+
+medal_count_table <- kable(tokyo_medals_data_new,
+                 caption = "Medal Count in 2016 vs 2020",
+                 format.args = list(
+                   big.mark = ",",
+                   scientific = FALSE
+                 )
+)
 
 
