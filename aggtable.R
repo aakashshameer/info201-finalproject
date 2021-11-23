@@ -1,5 +1,8 @@
 library("dplyr")
 library("readr")
+library("tidyverse")
+
+source("summary_info.R")
 
 #Olympic History: Athlete Events Data
 
@@ -10,18 +13,12 @@ aggregate_athletes_data <- athlete_events_data %>%
 
 #GDP Data
 
-gdp_data <- read.csv("src/data/GDP_data.csv", fileEncoding="UTF-8-BOM")
+gdp_data2 <- read.csv("src/data/GDP_data.csv", fileEncoding="UTF-8-BOM")
 
-aggregate_gdp_data <- gdp_data %>%
-  select(Country.Name, Country.Code, X2016)
-
-aggregate_gdp_data <- aggregate_gdp_data %>%
-  rename("Country Name" = Country.Name)
-
-aggregate_gdp_data <- aggregate_gdp_data %>%
-  rename("Country Code" = Country.Code)
-
-aggregate_gdp_data <- aggregate_gdp_data %>%
+aggregate_gdp_data <- gdp_data2 %>%
+  select(Country.Name, Country.Code, X2016) %>%
+  rename("Country Name" = Country.Name) %>%
+  rename("Country Code" = Country.Code) %>%
   rename("2016 GDP" = X2016)
 
 #COVID-19 Data 
@@ -40,6 +37,11 @@ aggregate_summary_data <- aggregate_summary_data %>%
 #Joined Tables
 
 #Medals vs GDP
+
+
+brazil_total_medal <- brazil_olympic_selected_country_medal %>%
+  mutate(total = Gold + Silver + Bronze)
+
 
 medals_data <- read.csv("src/data/olympic_data/Medals.csv", fileEncoding="UTF-8-BOM")
 

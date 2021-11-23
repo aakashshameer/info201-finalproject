@@ -7,7 +7,7 @@ tokyo_olymic_medal <- read.csv("src/data/olympic_data/Tokyo Medals 2021.csv")
 
 olympi_medal <- read.csv("src/data/Summer_olympic_Medals.csv")
 
-GDP_data <- read.csv("src/data/GDP_data.csv") %>%
+GDP_data <- read.csv("src/data/GDP_data.csv", fileEncoding="UTF-8-BOM") %>%
             rename("2016" = X2016, "Country Name" = Country.Name) 
 
 
