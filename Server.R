@@ -21,7 +21,7 @@ server <- function(input, output) {
     
   })
   
-  output$height_chart <- renderPLotly({
+  output$height_chart <- renderPlotly({
     Avg_Height_Chart_Data <- Avg_Height_Chart_Data %>%
       filter(Sport == input$Sport_Height)
     
