@@ -7,8 +7,8 @@ tokyo_olymic_medal <- read.csv("src/data/olympic_data/Tokyo Medals 2021.csv")
 
 olympi_medal <- read.csv("src/data/Summer_olympic_Medals.csv")
 
-GDP_data <- read.csv("src/data/GDP_data.csv", fileEncoding="UTF-8-BOM") %>%
-            rename("2016" = X2016, "Country Name" = Country.Name) 
+GDP_data <- read.csv("src/data/GDP_data.csv") %>%
+  rename("2016" = X2016, "Country Name" = Country.Name) 
 
 
 # Average weight of men gold medalists for Swimming in 2016
@@ -28,7 +28,7 @@ avg_men_swimming_height <- athlete_events %>%
   filter(`Sex` == "M") %>%
   pull(Height)
 avg_men_swimming_height <- mean(avg_men_swimming_height, trim = 0, na.rm = TRUE)
- 
+
 # Average weight of women gold medalists for Swimming in 2016
 avg_women_swimming_weight <- athlete_events %>%
   filter(`Games` == "2016 Summer") %>%
@@ -155,16 +155,88 @@ avg_women_Tennis_height <- athlete_events %>%
   pull(Height)
 avg_women_Tennis_height <- mean(avg_women_Tennis_height, trim = 0, na.rm = TRUE)
 
+# Average weight of women gold medalists for Cycling in 2016
+avg_women_Cycling_weight <- athlete_events %>%
+  filter(`Games` == "2016 Summer") %>%
+  filter(`Sport` == "Cycling") %>%
+  filter(`Medal` == "Gold") %>%
+  filter(`Sex` == "F") %>%
+  pull(Weight)
+avg_women_Cycling_weight <- mean(avg_women_Cycling_weight, trim = 0, na.rm = TRUE)
+
+# Average height of women gold medalists for Cycling in 2016
+avg_women_Cycling_height <- athlete_events %>%
+  filter(`Games` == "2016 Summer") %>%
+  filter(`Sport` == "Cycling") %>%
+  filter(`Medal` == "Gold") %>%
+  filter(`Sex` == "F") %>%
+  pull(Height)
+avg_women_Cycling_height <- mean(avg_women_Cycling_height, trim = 0, na.rm = TRUE)
+
+# Average weight of men gold medalists for Cycling in 2016
+avg_men_Cycling_weight <- athlete_events %>%
+  filter(`Games` == "2016 Summer") %>%
+  filter(`Sport` == "Cycling") %>%
+  filter(`Medal` == "Gold") %>%
+  filter(`Sex` == "M") %>%
+  pull(Weight)
+avg_men_Cycling_weight <- mean(avg_men_Cycling_weight, trim = 0, na.rm = TRUE)
+
+# Average height of men gold medalists for Cycling in 2016
+avg_men_Cycling_height <- athlete_events %>%
+  filter(`Games` == "2016 Summer") %>%
+  filter(`Sport` == "Cycling") %>%
+  filter(`Medal` == "Gold") %>%
+  filter(`Sex` == "M") %>%
+  pull(Height)
+avg_men_Cycling_height <- mean(avg_men_Cycling_height, trim = 0, na.rm = TRUE)
+
+# Average weight of women gold medalists for Basketball in 2016
+avg_women_Basketball_weight <- athlete_events %>%
+  filter(`Games` == "2016 Summer") %>%
+  filter(`Sport` == "Basketball") %>%
+  filter(`Medal` == "Gold") %>%
+  filter(`Sex` == "F") %>%
+  pull(Weight)
+avg_women_Basketball_weight <- mean(avg_women_Basketball_weight, trim = 0, na.rm = TRUE)
+
+# Average height of women gold medalists for Basketball in 2016
+avg_women_Basketball_height <- athlete_events %>%
+  filter(`Games` == "2016 Summer") %>%
+  filter(`Sport` == "Cycling") %>%
+  filter(`Medal` == "Gold") %>%
+  filter(`Sex` == "F") %>%
+  pull(Height)
+avg_women_Basketball_height <- mean(avg_women_Basketball_height, trim = 0, na.rm = TRUE)
+
+# Average weight of men gold medalists for Basketball in 2016
+avg_men_Basketball_weight <- athlete_events %>%
+  filter(`Games` == "2016 Summer") %>%
+  filter(`Sport` == "Basketball") %>%
+  filter(`Medal` == "Gold") %>%
+  filter(`Sex` == "M") %>%
+  pull(Weight)
+avg_men_Basketball_weight <- mean(avg_men_Basketball_weight, trim = 0, na.rm = TRUE)
+
+# Average height of men gold medalists for Basketball in 2016
+avg_men_Basketball_height <- athlete_events %>%
+  filter(`Games` == "2016 Summer") %>%
+  filter(`Sport` == "Basketball") %>%
+  filter(`Medal` == "Gold") %>%
+  filter(`Sex` == "M") %>%
+  pull(Height)
+avg_men_Basketball_height <- mean(avg_men_Basketball_height, trim = 0, na.rm = TRUE)
+
 # What was the U.S. GDP in 2016?
 US_2016_GDP <- GDP_data %>%
   filter(`Country Name` == "United States") %>%
   #filter(`2016` == max(`2016`)) %>%
-pull(`2016`)
+  pull(`2016`)
 
 # What was India's GDP in 2016?
 India_2016_GDP <- GDP_data %>%
   filter(`Country Name` == "India") %>%
-pull(`2016`)
+  pull(`2016`)
 
 # What was China's GDP in 2016?
 China_2016_GDP <- GDP_data %>%
@@ -254,85 +326,17 @@ br_olympic_ge_medal <- olympi_medal %>%
 br_olympic_gb_medal <- olympi_medal %>%
   filter(Host_country == "Brazil") %>% 
   filter(Country_Name == "Great Britain")
-#France
-br_olympic_fn_medal <- olympi_medal %>%
-  filter(Host_country == "Brazil") %>% 
-  filter(Country_Name == "France")
-#Italy
-br_olympic_it_medal <- olympi_medal %>%
-  filter(Host_country == "Brazil") %>% 
-  filter(Country_Name == "Italy")
-#South Africa
-br_olympic_sa_medal <- olympi_medal %>%
-  filter(Host_country == "Brazil") %>% 
-  filter(Country_Name == "South Africa")
-#Mexico
-br_olympic_mx_medal <- olympi_medal %>%
-  filter(Host_country == "Brazil") %>% 
-  filter(Country_Name == "Mexico")
-#Australia
-br_olympic_au_medal <- olympi_medal %>%
-  filter(Host_country == "Brazil") %>% 
-  filter(Country_Name == "Australia")
-#Korea
-br_olympic_kr_medal <- olympi_medal %>%
-  filter(Host_country == "Brazil") %>% 
-  filter(Country_Name == "South Korea")
-#Singapore
-br_olympic_sn_medal <- olympi_medal %>%
-  filter(Host_country == "Brazil") %>% 
-  filter(Country_Name == "Singapore")
-#Russia
-br_olympic_rs_medal <- olympi_medal %>%
-  filter(Host_country == "Brazil") %>% 
-  filter(Country_Name == "Russia")
-#Canada
-br_olympic_cn_medal <- olympi_medal %>%
-  filter(Host_country == "Brazil") %>% 
-  filter(Country_Name == "Canada")
-#Spain
-br_olympic_sp_medal <- olympi_medal %>%
-  filter(Host_country == "Brazil") %>% 
-  filter(Country_Name == "Spain")
-#Belgium
-br_olympic_bg_medal <- olympi_medal %>%
-  filter(Host_country == "Brazil") %>% 
-  filter(Country_Name == "Belgium")
-#Finland
-br_olympic_fl_medal <- olympi_medal %>%
-  filter(Host_country == "Brazil") %>% 
-  filter(Country_Name == "Finland")
-#Finland
-br_olympic_fl_medal <- olympi_medal %>%
-  filter(Host_country == "Brazil") %>% 
-  filter(Country_Name == "Finland")
 
-#medal count of selected countries in Brazil Olympics
+#medal count of 6 selected country in Brazil Olympics
 brazil_olympic_selected_country_medal <- rbind(
   br_olympic_ch_medal,
   br_olympic_jp_medal,
   br_olympic_in_medal,
   br_olympic_us_medal,
   br_olympic_gb_medal, 
-  br_olympic_ge_medal,
-  br_olympic_fn_medal,
-  br_olympic_it_medal,
-  br_olympic_sa_medal,
-  br_olympic_mx_medal,
-  br_olympic_au_medal,
-  br_olympic_kr_medal,
-  br_olympic_sn_medal,
-  br_olympic_rs_medal,
-  br_olympic_cn_medal,
-  br_olympic_sp_medal,
-  br_olympic_bg_medal,
-  br_olympic_fl_medal
-  )
+  br_olympic_ge_medal)
 
 
 left_join(brazil_olympic_selected_country_medal, 
           tokyo_olympic_selected_country_medal, 
 )
-
-
-
