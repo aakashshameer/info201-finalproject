@@ -40,7 +40,9 @@ chart_gdp_medal_count <- ggplot(gdp_medals_data) +
         axis.text = element_text(color = "#525252", size = 8), 
         text = element_text(size = 10, family = "mono")) +
   labs(x = "Total Medal", y = "GDP") 
+
 plot(chart_gdp_medal_count)
+
 
 
   
