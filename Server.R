@@ -4,6 +4,7 @@ library(ggplot2)
 library(dplyr)
 library(tidyverse)
 library(shiny)
+library(scales)
 
 server <- function(input, output) {
   output$weight_chart <- renderPlotly({
@@ -35,5 +36,21 @@ server <- function(input, output) {
     return(height_chart)
     
   })
+  
+  output$slope <- renderPlotly({
+    tokyo_medals_data_new <- tokyo_medals_data_new %>%
+      filter (Country_Name== input$Countries)
+      stacked_bar_graph <- ggplot(tokyo_medals_data_new, aes(fill=Year, y=Medals, x=Country_Name)) + 
+        geom_bar(position="stack", stat="identity") + 
+        labs(x = "Medal Count", y = "Country", title = "Change in Total Medal Count from 2016 to 2021") + 
+        coord_flip() + 
+        scale_fill_manual(values = c("Blue", " Red"))
+      
+      slope <-ggplotly(stacked_bar_graph)
+      
+      return(slope)
+  })
+  
+  
   
 }

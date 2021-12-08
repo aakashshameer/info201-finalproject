@@ -78,8 +78,34 @@ first_graph_page <- tabPanel(
   )
 )
 
+# Third page
+select_country <- checkboxGroupInput(inputId = "Countries", 
+                                     label = "Countries", 
+                                     choices = c("United States", "Japan", "India", "Great Britain", "Germany", "China"), 
+                                     selected = c("United States", "Japan", "India", "Great Britain", "Germany", "China")
+                                     )
+
+third_graph_page <- tabPanel(
+  "Bar View",
+  titlePanel("Medal Count for 2016 vs 2021"),
+  sidebarLayout(
+    sidebarPanel(
+      select_country
+      #width = 20
+    ),
+    mainPanel(
+      plotlyOutput("slope")
+    )
+  ),
+  tags$p(
+    "Explanation"
+  )
+)
+
+
 ui <- navbarPage(
   "Olympics Data Project",
   intro_page,
-  first_graph_page
+  first_graph_page,
+  third_graph_page
 )
