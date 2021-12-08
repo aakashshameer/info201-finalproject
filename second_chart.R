@@ -44,3 +44,4 @@ chart_gdp_medal_count <- ggplot(gdp_medals_data, aes(x =  Total_Medals, y = GDP2
   labs(x = "Total Medal", y = "GDP") 
 
 plot(chart_gdp_medal_count)
+
