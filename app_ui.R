@@ -20,13 +20,20 @@ intro_page <- tabPanel(
       ". Those were the questions that we had in our minds when starting this assignment."
     ),
     
-    HTML('<center><img src="olympics.jpeg", width = 800, height = 400></center>'),
+    img(src="olympics.jpeg", align = "center"),
+    #HTML('<center><img src="olympics.jpeg", width = 800, height = 400></center>'),
     
     tags$h2("Nature of the data"),
     tags$p(
-      "Paragraph"
+      "We chose the Olympics as a topic because our group has a shared interest 
+      in sports, and the event just happened this year. Also, the Olympics has 
+      so many different components with a wide range of events and countries 
+      competing that we can wrangle compelling data from.We also read this",a(" article ",
+      href ="https://swimswam.com/tokyo-2020-olympic-games-watched-by-more-than-3-billion-people/"
+      ), "which shows the popularity of the Games."
     ),
     
+    # insert picture later
     #HTML('<center><img src="", width = 800, height = 400></center>'),
     
     tags$h2("Data Presented"),
