@@ -1,13 +1,19 @@
-source("Chart1.R")
-source("Chart3.R")
-
 library(ggplot2)
 library(dplyr)
 library(tidyverse)
 library(shiny)
 library(scales)
+library(stringr)
+
+source("Chart1.R")
+source("Chart3.R")
+source("second_chart.R")
+source("summary_info.R")
+source("aggtable.R")
 
 server <- function(input, output) {
+  
+  # First Weight Chart
   output$weight_chart <- renderPlotly({
     Avg_Weight_Chart_Data <- Avg_Weight_Chart_Data %>%
       filter(Sport %in% input$Sport_Weight)
@@ -23,6 +29,8 @@ server <- function(input, output) {
     
   })
   
+  
+  # First Height Chart
   output$height_chart <- renderPlotly({
     Avg_Height_Chart_Data <- Avg_Height_Chart_Data %>%
       filter(Sport %in% input$Sport_Height)
@@ -38,6 +46,24 @@ server <- function(input, output) {
     
   })
   
+  #Second Chart
+  output$scatter <- renderPlotly({
+    medal_range <- gdp_medals_data %>% 
+      filter(Total_Medals >= input$Total_Medals[1], Total_Medals <= input$Total_Medals[2])
+    
+    scatter <- ggplot(medal_range) +
+      geom_point(data = medal_range,
+                 mapping = aes(x=Total_Medals, y=GDP2016, fill = Country_Name,
+                               text = paste("Country:", Country_Name))) +
+      ggtitle("2016 GDP VS Medal Counts") +
+      labs(x = "Medal Count", y = "GDP 2016", fill = "Countries") +
+      scale_fill_brewer(palette = "Spectral")
+    scatter <- ggplotly(scatter, tooltip = "text")
+    return(scatter)
+    
+  })
+  
+  # Third Chart
   output$slope <- renderPlotly({
     tokyo_medals_data_new <- tokyo_medals_data_new %>%
       filter (Country_Name %in% input$Countries)

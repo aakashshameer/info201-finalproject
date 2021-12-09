@@ -1,11 +1,13 @@
 library(shiny)
 library(tidyverse)
 library(plotly)
+library(ggplot2)
+library(dplyr)
 
-source("servermy.R")
+source("app_server.R")
+source("aggtable.R")
+source("Chart3.R")
 
-# data_wa <- read.csv("data/GHG_Reporting_Program_Publication.csv") %>%
-#  mutate(County = tolower(County))
 
 # Create UI for Intro page
 
@@ -87,6 +89,39 @@ first_graph_page <- tabPanel(
   )
 )
 
+# Second Interactive Page
+
+#left side of second tab
+scatter_sidebar_content <- sliderInput(inputId = "Total_Medals", 
+              label = "Choose the total medal count range:",
+              min = min(gdp_medals_data$Total_Medals), 
+              max = max(gdp_medals_data$Total_Medals), 
+              value = c(1, 25))
+
+# right side of second tab 
+#scatter_main_content <- mainPanel(
+#  plotlyOutput("scatter"),
+#)
+
+#Whole tab of second tab
+second_graph_page <- tabPanel(
+  "Scatter View",
+  titlePanel("Medal Count vs GDP"),
+  sidebarLayout(
+    sidebarPanel(
+      scatter_sidebar_content
+    ),
+    mainPanel(
+      plotlyOutput("scatter")
+    )
+  ),
+  tags$p(
+    "Explanantion"
+  )
+)
+
+
+
 # Third page
 select_country <- checkboxGroupInput(inputId = "Countries", 
                                      label = "Countries", 
@@ -116,5 +151,6 @@ ui <- navbarPage(
   "Olympics Data Project",
   intro_page,
   first_graph_page,
+  second_graph_page,
   third_graph_page
 )
