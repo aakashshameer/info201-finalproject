@@ -20,7 +20,7 @@ intro_page <- tabPanel(
       ". Those were the questions that we had in our minds when starting this assignment."
     ),
     
-    img(src="olympics.jpeg", align = "center"),
+    img(src="olympics.jpeg", align = "center", width = "max", height = "400"),
     #HTML('<center><img src="olympics.jpeg", width = 800, height = 400></center>'),
     
     tags$h2("Nature of the data"),
@@ -69,7 +69,7 @@ sport_check_height <- checkboxGroupInput(inputId = "Sport_Height",
                                                       "Swimming", "Tennis", "Weightlifting"))
 
 first_graph_page <- tabPanel(
-  "Bar View",
+  "Bar Chart View",
   titlePanel("Height and Weight"),
   sidebarLayout(
     sidebarPanel(
@@ -95,7 +95,7 @@ select_country <- checkboxGroupInput(inputId = "Countries",
                                      )
 
 third_graph_page <- tabPanel(
-  "Bar View",
+  "Stacked Bar Chart View",
   titlePanel("Medal Count for 2016 vs 2021"),
   sidebarLayout(
     sidebarPanel(

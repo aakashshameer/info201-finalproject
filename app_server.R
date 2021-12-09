@@ -1,4 +1,5 @@
 source("Chart1.R")
+source("Chart3.R")
 
 library(ggplot2)
 library(dplyr)
