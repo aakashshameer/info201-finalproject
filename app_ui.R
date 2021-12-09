@@ -2,7 +2,7 @@ library(shiny)
 library(tidyverse)
 library(plotly)
 
-source("Server.R")
+source("servermy.R")
 
 # data_wa <- read.csv("data/GHG_Reporting_Program_Publication.csv") %>%
 #  mutate(County = tolower(County))
@@ -53,18 +53,20 @@ intro_page <- tabPanel(
 # Create UI for interactive page 1
 
 # Widget to select sport for weight chart 
-sport_check_weight <- radioButtons(inputId = "Sport_Weight",
+sport_check_weight <- checkboxGroupInput(inputId = "Sport_Weight",
                                          label = "Sports for Weight",
                                          choices = c("Basketball", "Cycling", "Gymnastics",
                                                      "Swimming", "Tennis", "Weightlifting"),
-                                         selected = c("Basketball"))
+                                         selected = c("Basketball", "Cycling", "Gymnastics",
+                                                      "Swimming", "Tennis", "Weightlifting"))
 
 # Widget to select sport for height chart 
-sport_check_height <- radioButtons(inputId = "Sport_Height",
+sport_check_height <- checkboxGroupInput(inputId = "Sport_Height",
                                          label = "Sports for Height",
                                          choices = c("Basketball", "Cycling", "Gymnastics",
                                                      "Swimming", "Tennis", "Weightlifting"),
-                                         selected = c("Basketball"))
+                                         selected = c("Basketball", "Cycling", "Gymnastics",
+                                                      "Swimming", "Tennis", "Weightlifting"))
 
 first_graph_page <- tabPanel(
   "Bar View",
