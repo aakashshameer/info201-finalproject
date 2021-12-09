@@ -13,9 +13,9 @@ intro_page <- tabPanel(
   "Introduction",
   #includeCSS("style.css"),
   tags$body(
-    titlePanel(tags$h1("An overview of the project")),
+    titlePanel(tags$h1("Project Overview")),
     tags$p(
-      "The reflection questions we wish to answer was", em("What height and weight classes for male and female athletes show the most success in different events?"),
+      "The reflection questions we wished to answer are", em("What height and weight classes for male and female athletes show the most success in different events?"),
       ", ", em("How do countries’ GDP relate to their medal counts?"), "and ", em("How do the results of the 2021 Olympics for different countries compare to that of past Olympic games?"), 
       ". Those were the questions that we had in our minds when starting this assignment."
     ),
@@ -28,7 +28,7 @@ intro_page <- tabPanel(
       "We chose the Olympics as a topic because our group has a shared interest 
       in sports, and the event just happened this year. Also, the Olympics has 
       so many different components with a wide range of events and countries 
-      competing that we can wrangle compelling data from.We also read this",a(" article ",
+      competing that we can wrangle compelling data from. We also read this",a(" article ",
       href ="https://swimswam.com/tokyo-2020-olympic-games-watched-by-more-than-3-billion-people/"
       ), "which shows the popularity of the Games."
     ),
