@@ -1,0 +1,38 @@
+  body{
+    background-color: peachpuff;
+  }
+  
+  h1{
+    font-family: Georgia, serif;
+    font-size: 40px;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  h2{
+    font-family: Times, serif;
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  h3{
+    font-family: Times, serif;
+    font-size: 15px;
+    text-align: center;
+    font-weight: italic;
+  }
+  
+  p{
+    font-family: Arial, Sans-Serif;
+    font-size: 20px;
+    margin-bottom: 70px;
+    margin-top: 30px;
+    font-weight: normal;
+  }
+  
+  ul{
+    margin-top: 5px;
+    font-family: Cambria;
+    font-size: 20px;
+  }

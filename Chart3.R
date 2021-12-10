@@ -8,8 +8,6 @@ library(knitr)
 source("summary_info.R")
 source("aggtable.R")
 
-brazil2016_total_medal <- brazil2016_total_medal %>%
-                          select(Country_Name, total)
 
 
 Medals <- c(113,121, 58,41, 88,70,  65,  67, 37,42,  7, 2)
@@ -25,12 +23,5 @@ stacked_bar_graph <- ggplot(tokyo_medals_data_new, aes(fill=Year, y=Medals, x=Co
 plot(stacked_bar_graph)
 
 
-medal_count_table <- kable(tokyo_medals_data_new,
-                 caption = "Medal Count in 2016 vs 2020",
-                 format.args = list(
-                   big.mark = ",",
-                   scientific = FALSE
-                 )
-)
 
 

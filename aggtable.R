@@ -21,14 +21,14 @@ aggregate_gdp_data <- gdp_data2 %>%
   rename("GDP2016" = X2016) 
 
 
-mutate_if(is.numeric, format(), 3)
+#mutate_if(is.numeric, format(), 3)
 
 aggregate_gdp_data2 <- gdp_data2 %>%
   select(Country.Name, Country.Code, X2016) %>%
   rename("Country Name" = Country.Name) %>%
   rename("Country Code" = Country.Code) %>%
-  rename("GDP2016" = X2016) %>% 
-  mutate_if(is.numeric, signif(digits = 3))
+  rename("GDP2016" = X2016)
+  #mutate_if(is.numeric, signif(digits = 3))
 
 #COVID-19 Data 
 
@@ -69,3 +69,4 @@ tokyo_medals_data <- tokyo_medals_data %>%
   rename("Rank by Total" = Rank.By.Total)
 
 tokyo_medals_covid_data <- full_join(tokyo_medals_data, aggregate_summary_data) 
+
