@@ -8,7 +8,9 @@ athlete_events_data <- read.csv("src/data/olympic_history/athlete_events.csv")
 
 aggregate_athletes_data <- athlete_events_data %>%
   select(Sex, Age, Height, Weight, Team, Games, Sport, Medal) %>%
-  group_by(Team)
+  group_by(Team) 
+
+aggregate_athletes_data$Weight <- sub("0+$", "", as.character(aggregate_athletes_data$Weight))
 
 #GDP Data
 
@@ -52,11 +54,12 @@ aggregate_2016_medal_data <- brazil2016_total_medal %>%
   select(Year, Host_country, Host_city, Country_Name, total)  %>%
   rename("Host Country" = Host_country) %>%
   rename("Host City" = Host_city) %>%
-  rename("Total_Medals" = total) 
+  rename("Total_Medals" = total)
+  #rename("Country Name" = Country_Name)
 
 gdp_medals_data <- inner_join(aggregate_gdp_data, aggregate_2016_medal_data)
 
-gdp_medals_data$Total_Medals <- as.numeric(gdp_medals_data$Total_Medals)   
+gdp_medals_data$Total_Medals <- as.numeric(gdp_medals_data$Total_Medals )   
 
 #Tokyo Medals vs COVID Cases
 
@@ -66,7 +69,8 @@ tokyo_medals_data <- tokyo_medals_data %>%
   rename("Gold Medal" = Gold.Medal) %>%
   rename("Silver Medal" = Silver.Medal)  %>%
   rename("Bronze Medal" = Bronze.Medal) %>%
-  rename("Rank by Total" = Rank.By.Total)
+  rename("Rank by Total" = Rank.By.Total) %>%
+  arrange(`Rank by Total`) 
 
 tokyo_medals_covid_data <- full_join(tokyo_medals_data, aggregate_summary_data) 
 
